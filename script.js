@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchProducts();
 
     function fetchProducts() {
-        fetch("http://localhost:5000/products")
+        fetch("http://localhost:3000/products")
             .then(response => response.json())
             .then(data => {
                 displayProducts(data);
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function searchProducts() {
         const searchTerm = searchInput.value.toLowerCase();
-        fetch("http://localhost:5000/products")
+        fetch("http://localhost:3000/products")
             .then(response => response.json())
             .then(data => {
                 const filteredProducts = data.filter(product => 
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3>${product.name}</h3>
                     <img src="${product.image_link}" alt="${product.name}">
                     <p>Brand: ${product.brand}</p>
-                    <p>Price: ${product.price} USD</p>
+                    <p>Price: KSH ${product.price} </p>
                     <button class="add-to-cart" data-product-id="${product.id}">Add to Cart</button>
                 </div>
             `;
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        fetch("http://localhost:5000/products")
+        fetch("http://localhost:3000/products")
             .then(response => response.json())
             .then(data => {
                 const cartProducts = data.filter(product => 
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <img src="${product.image_link}" alt="${product.name}" style="max-width: 100px; max-height: 100px;">
                                 <p>Name: ${product.name}</p>
                                 <p>Brand: ${product.brand}</p>
-                                <p>Price: ${product.price} USD</p>
+                                <p>Price: KSH ${product.price} </p>
                                 <button class="remove-btn" data-index="${index}">Remove</button>
                             </div>
                         `;
