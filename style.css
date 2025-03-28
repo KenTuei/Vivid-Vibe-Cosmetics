@@ -101,9 +101,8 @@ section div h2{
 } 
 
 
-#product-list div:hover {
+/*#product-list div:hover {
     transform: scale(1.1); /* Scale the div on hover */
-}
 
 #product-list {
     display: flex;
